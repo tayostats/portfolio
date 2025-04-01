@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Eyitayo Odediran - Data Scientist Portfolio</title>
+  <link rel="icon" href="tayo stats ICON.PNG" type="image/png">
+  <style>
+    :root {
+      --primary: #FF6B6B;
+      --secondary: #4ECDC4;
+      --dark-bg: #0F0F0F;
+      --medium-bg: #1A1A1A;
+      --light-text: #F5F5F5;
+      --border-radius: 12px;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background-color: var(--dark-bg);
+      color: var(--light-text);
+      line-height: 1.7;
+    }
+
+    header {
+      background: linear-gradient(135deg, var(--medium-bg) 0%, var(--dark-bg) 100%);
+      padding: 4rem 20px;
+      text-align: center;
+      border-bottom: 3px solid var(--primary);
+      margin-bottom: 2rem;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.8em;
+      background: linear-gradient(45deg, var(--primary), var(--secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin: 2rem 0;
+      flex-wrap: wrap;
+    }
+
+    .nav-tab {
+      padding: 1rem 2rem;
+      border-radius: var(--border-radius);
+      background: var(--medium-bg);
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border: 2px solid transparent;
+      position: relative;
+    }
+
+    .nav-tab.active,
+    .nav-tab:hover {
+      border-color: var(--primary);
+      transform: translateY(-3px);
+      box-shadow: 0 4px 15px rgba(255, 107, 107, 0.2);
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: var(--medium-bg);
+      border-radius: var(--border-radius);
+      padding: 0.5rem;
+      min-width: 200px;
+      z-index: 1;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .dropdown-item {
+      padding: 0.8rem 1rem;
+      display: block;
+      color: var(--light-text);
+      text-decoration: none;
+      transition: background 0.3s ease;
+    }
+
+    .dropdown-item:hover {
+      background: var(--dark-bg);
+    }
+
+    .content-section {
+      display: none;
+      padding: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .content-section.active {
+      display: block;
+      animation: fadeIn 0.5s ease;
+    }
+
+    .about-section {
+      text-align: center;
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background: var(--medium-bg);
+      border-radius: var(--border-radius);
+    }
+
+    .cv-button {
+      display: inline-block;
+      padding: 1rem 2rem;
+      background: linear-gradient(45deg, var(--primary), var(--secondary));
+      color: white;
+      text-decoration: none;
+      border-radius: var(--border-radius);
+      margin-top: 1rem;
+      transition: transform 0.3s ease;
+    }
+
+    .cv-button:hover {
+      transform: translateY(-2px);
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .card {
+      background: var(--dark-bg);
+      border-radius: var(--border-radius);
+      padding: 1.5rem;
+      border: 1px solid #2A2A2A;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      border-color: var(--primary);
+    }
+
+    .card h3 {
+      margin-top: 0;
+      color: var(--primary);
+    }
+
+    .tech-stack {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin: 1rem 0;
+    }
+
+    .tech-item {
+      background: rgba(78, 205, 196, 0.1);
+      padding: 0.3rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.9em;
+      color: var(--secondary);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    header {
+      display: flex; /* To position the image and text side-by-side */
+      align-items: center; /* To vertically align the image and text */
+    }
+
+    .profile-image-container {
+      width: 100px; /* Adjust the size as needed */
+      height: 100px; /* Make sure width and height are equal for a perfect circle */
+      border-radius: 50%; /* This makes the container a circle */
+      overflow: hidden; /* Clips the image to the circular container */
+      margin-right: 20px; /* Add some space between the image and text */
+    }
+
+    .profile-image-container img {
+      width: 100%; /* Make the image fill the container */
+      height: 100%;
+      object-fit: cover; /* Ensures the image covers the entire container without distortion */
+    }
+    header p {
+    text-align: right;
+    margin: 0; /* Remove default paragraph margin if needed */
+  }
+  </style>
+</head>
+<body>
+  <header style="display: flex; align-items: center; justify-content: space-between;">
+    <div style="display: flex; align-items: center;">
+      <div class="profile-image-container">
+        <img src="head shot.jpg" alt="Your Headshot">
+      </div>
+      <h1>Eyitayo Odediran</h1>
+    </div>
+    <p style="text-align: right; margin: 0; font-weight: bold;">Data Scientist | Data Engineer | Data Analyst</p>
+  </header>
+
+  <!-- About Section -->
+  <section class="about-section">
+    <h2>About Me</h2>
+    <p>I am a Data Scientist specializing in leveraging data analytics and machine learning to drive informed decision-making. 
+      While my experience includes significant work in sports analytics through Afriskaut and Tayo Stats, my core skills in data 
+      manipulation, modeling, and communication are readily transferable to other sectors seeking data-driven insights.</p>
+    <a href="ODEDIRAN EYITAYO CV.pdf" class="cv-button" target="_blank">View CV</a>
+    <a href="https://www.linkedin.com/in/eyitayo-odediran/" class="cv-button" target="_blank">View Linkedin Profile</a>
+    <a href="https://github.com/tayostats" class="cv-button" target="_blank">View Github</a>
+  </section>
+
+  <!-- Navigation Tabs -->
+  <nav>
+    <div class="nav-tab active" onclick="showSection('afriskaut')">Afriskaut</div>
+    
+    <div class="nav-tab dropdown" onclick="showSection('personal')">
+      Personal Projects
+      <div class="dropdown-content">
+        <a href="#football" class="dropdown-item" onclick="showSubsection('football')">Football Analytics</a>
+        <a href="#general" class="dropdown-item" onclick="showSubsection('general')">General Data Science</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Enhanced Afriskaut Work Section -->
+  <section class="content-section active" id="afriskaut">
+    <div class="grid-container">
+      <!-- Data Pipeline Card -->
+      <div class="card">
+        <h3>Automated Player Evaluation System</h3>
+        <div class="tech-stack">
+          <span class="tech-item">Python</span>
+          <span class="tech-item">MongoDB</span>
+          <span class="tech-item">Prefect</span>
+          <span class="tech-item">PostGRE SQL</span>
+        </div>
+        <ul>
+          <li>Built ETL pipelines processing 50k+ events/match from NoSQL database</li>
+          <li>Automated data cleaning and feature engineering workflows</li>
+          <li>Integrated scouting evaluations with performance metrics</li>
+        </ul>
+      </div>
+
+      <!-- ML Model Card -->
+      <div class="card">
+        <h3>Talent Identification Algorithm</h3>
+        <div class="tech-stack">
+          <span class="tech-item">Python</span>
+          <span class="tech-item">scikit-learn</span>
+          <span class="tech-item">FastAPI</span>
+          <span class="tech-item">Pandas</span>
+            <span class="tech-item">Numpy</span>
+        </div>
+        <ul>
+          
+          <li>Automated hyperparameter tuning pipeline</li>
+          <li>Real-time similar players API deployed on AWS</li>
+        </ul>
+      </div>
+
+      <!-- Dashboard Card -->
+      <div class="card">
+        <h3>Internal Scouting Tool</h3>
+        <div class="tech-stack">
+          <span class="tech-item">Streamlit</span>
+          <span class="tech-item">Python</span>
+          <span class="tech-item">Plotly</span>
+          <span class="tech-item">Pandas</span>
+            <span class="tech-item">Numpy</span>
+        </div>
+        <ul>
+          <li>Interactive plots for player metrics viewing</li>
+          <li>Pizza charts for player percentile ranking display</li>
+          <li>30+ custom KPIs with drill-down functionality</li>
+          <li>Adopted by scouting team for talent identification</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Enhanced Personal Projects Section -->
+  <section class="content-section" id="personal">
+    <!-- Football Analytics -->
+    <div class="sub-section active" id="football">
+      <h2>Football Data Science & Analysis Projects</h2>
+      <div class="grid-container">
+        <!-- Passing Network Analysis -->
+        <div class="card">
+          <h3>Advanced Passing Network Analysis</h3>
+          <div class="tech-stack">
+            <span class="tech-item">Python</span>
+            <span class="tech-item">NetworkX</span>
+            <span class="tech-item">PostGRE SQL</span>
+            <span class="tech-item">Pandas</span>
+            <span class="tech-item">Numpy</span>
+            <span class="tech-item">Matplotlib</span>
+          </div>
+          <ul>
+            <li>Developed centrality metrics for tactical analysis</li>
+            <li>Automated visualization generation for match reports</li>
+            <li>Includes a database for storing and querying data.</li>
+          </ul>
+          <div class="project-links">
+            <a href="https://medium.com/@tayo_stats" class="project-link">Blog Posts</a>
+            <a href="https://github.com/tayostats/Contextual-Passing-Networks">View Code</a>
+          </div>
+        </div>
+
+        <!-- Player Progression Metrics -->
+        <div class="card">
+          <h3>Player Progression Effectiveness Model</h3>
+          <div class="tech-stack">
+            <span class="tech-item">Python</span>
+            <span class="tech-item">Pandas</span>
+          </div>
+          <ul>
+              <li>Developed a custom metric to quantify a player's ability to move the ball forward efficiently during a match.</li>
+              <li>The metric is designed to provide a clearer understanding of a player's contribution to offensive build-up, especially in breaking defensive lines.</li>
+              <li>Incorporated it into detailed visualizations for clubs and analysts to evaluate players in different match contexts.</li>
+          </ul>
+          <div class="project-links">
+            <a href= "https://github.com/tayostats/Progressive-Pass-Effectiveness">View Code</a>
+          </div>
+      </div>
+    </div>
+
+    <!-- General Data Science -->
+    <div class="sub-section" id="general">
+      <h2>General Data Science & Analysis Projects</h2>
+      <div class="grid-container">
+        <!-- Bottleneck Forecasting -->
+        <div class="card">
+          <h3>Production Bottleneck Forecasting</h3>
+          <div class="tech-stack">
+            <span class="tech-item">ARIMA</span>
+            <span class="tech-item">Tableau</span>
+            <span class="tech-item">Streamlit</span>
+          </div>
+          <ul>
+            <li>Time series forecasting with 94% accuracy</li>
+            <li>Anomaly detection system</li>
+            <li>Real-time dashboard integration</li>
+          </ul>
+          <div class="project-links">
+            <a href="https://bottleneck-forecasting-tayo.streamlit.app/" 
+               class="project-link streamlit-link">Open App</a>
+            <a href="https://public.tableau.com/views/BottleneckForecasting/Sheet2" 
+               class="project-link tableau-link">View Dashboard</a>
+            <a href="https://github.com/tayostats/Bottleneck-Forecasting" 
+               class="project-link github-link">View Code</a>
+          </div>
+        </div>
+
+        <!-- US Sales Analysis -->
+        <div class="card">
+          <h3>US Sales Analysis & Forecasting</h3>
+          <div class="tech-stack">
+            <span class="tech-item">ARIMA</span>
+            <span class="tech-item">Prophet</span>
+            <span class="tech-item">Streamlit</span>
+            <span class="tech-item">Tableau</span>
+          </div>
+          <ul>
+            <li>Regional sales trend analysis</li>
+            <li>Inventory optimization recommendations</li>
+            <li>Interactive scenario planning tool</li>
+          </ul>
+          <div class="project-links">
+            <a href="https://us-sales-analysis-forecasting-tayo.streamlit.app/" 
+               class="project-link streamlit-link">Open App</a>
+            <a href="https://public.tableau.com/views/USSalesAnalysis-Eyitayo/Dashboard1" 
+               class="project-link tableau-link">View Dashboard</a>
+            <a href="https://github.com/tayostats/US-Sales-Analysis-Forecasting" 
+               class="project-link github-link">View Code</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Scripts remain same -->
+
+  <script>
+    function showSection(sectionId) {
+      // Hide all sections
+      document.querySelectorAll('.content-section').forEach(section => {
+        section.classList.remove('active');
+      });
+      
+      // Show selected section
+      document.getElementById(sectionId).classList.add('active');
+      
+      // Update tab states
+      document.querySelectorAll('.nav-tab').forEach(tab => {
+        tab.classList.remove('active');
+      });
+      event.currentTarget.classList.add('active');
+    }
+
+    function showSubsection(subsectionId) {
+      // Hide all subsections
+      document.querySelectorAll('.sub-section').forEach(sub => {
+        sub.classList.remove('active');
+      });
+      
+      // Show selected subsection
+      document.getElementById(subsectionId).classList.add('active');
+    }
+  </script>
+</body>
+</html>
