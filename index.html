@@ -219,6 +219,26 @@
       text-align: center; /* Center job title on mobile */
     }
   }
+  .project-links {
+  display: flex; /* To arrange buttons horizontally */
+  gap: 10px; /* Add some space between buttons */
+}
+
+  .project-button {
+    background-color: #f0f0f0; /* Light background color */
+    border: 1px solid #ccc; /* Light border */
+    padding: 8px 15px; /* Add some padding */
+    text-align: center;
+    text-decoration: none; /* Remove default link underline */
+    display: inline-block;
+    font-size: 14px;
+    cursor: pointer; /* Change cursor on hover */
+    border-radius: 5px; /* Rounded corners */
+  }
+
+  .project-button:hover {
+    background-color: #e0e0e0; /* Slightly darker on hover */
+  }
   </style>
 </head>
 <body>
@@ -335,8 +355,9 @@
             <li>Includes a database for storing and querying data.</li>
           </ul>
           <div class="project-links">
-            <a href="https://medium.com/@tayo_stats" class="project-link">Blog Posts</a>
-            <a href="https://github.com/tayostats/Contextual-Passing-Networks">View Code</a>
+            <button class="project-button" onclick="window.location.href='https://medium.com/@tayo_stats'">Blog Posts</button>
+            <button class="project-button" onclick="window.location.href='https://github.com/tayostats/Contextual-Passing-Networks'">View Code</button>
+          
           </div>
         </div>
 
@@ -353,7 +374,8 @@
               <li>Incorporated it into detailed visualizations for clubs and analysts to evaluate players in different match contexts.</li>
           </ul>
           <div class="project-links">
-            <a href= "https://github.com/tayostats/Progressive-Pass-Effectiveness">View Code</a>
+            
+            <button class="project-button" onclick="window.location.href='https://github.com/tayostats/Progressive-Pass-Effectiveness'">View Code</button>
           </div>
       </div>
     </div>
@@ -376,12 +398,9 @@
             <li>Real-time dashboard integration</li>
           </ul>
           <div class="project-links">
-            <a href="https://bottleneck-forecasting-tayo.streamlit.app/" 
-               class="project-link streamlit-link">Open App</a>
-            <a href="https://public.tableau.com/views/BottleneckForecasting/Sheet2" 
-               class="project-link tableau-link">View Dashboard</a>
-            <a href="https://github.com/tayostats/Bottleneck-Forecasting" 
-               class="project-link github-link">View Code</a>
+            <button class="project-button streamlit-button" onclick="window.location.href='https://bottleneck-forecasting-tayo.streamlit.app/'">Open App</button>
+            <button class="project-button tableau-button" onclick="window.location.href='https://public.tableau.com/views/BottleneckForecasting/Sheet2'">View Dashboard</button>
+            <button class="project-button github-button" onclick="window.location.href='https://github.com/tayostats/Bottleneck-Forecasting'">View Code</button>
           </div>
         </div>
 
@@ -400,12 +419,11 @@
             <li>Interactive scenario planning tool</li>
           </ul>
           <div class="project-links">
-            <a href="https://us-sales-analysis-forecasting-tayo.streamlit.app/" 
-               class="project-link streamlit-link">Open App</a>
-            <a href="https://public.tableau.com/views/USSalesAnalysis-Eyitayo/Dashboard1" 
-               class="project-link tableau-link">View Dashboard</a>
-            <a href="https://github.com/tayostats/US-Sales-Analysis-Forecasting" 
-               class="project-link github-link">View Code</a>
+            <div class="project-links">
+              <button class="project-button streamlit-button" onclick="window.location.href='https://us-sales-analysis-forecasting-tayo.streamlit.app/'">Open App</button>
+              <button class="project-button tableau-button" onclick="window.location.href='https://public.tableau.com/views/USSalesAnalysis-Eyitayo/Dashboard1'">View Dashboard</button>
+              <button class="project-button github-button" onclick="window.location.href='https://github.com/tayostats/US-Sales-Analysis-Forecasting'">View Code</button>
+            </div>
           </div>
         </div>
       </div>
