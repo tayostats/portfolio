@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Eyitayo Odediran - Data Scientist Portfolio</title>
   <link rel="icon" href="tayo stats ICON.png" type="image/png">
-
   <style>
     :root {
       --primary: #FF6B6B;
@@ -195,6 +194,30 @@
     header p {
     text-align: right;
     margin: 0; /* Remove default paragraph margin if needed */
+  }
+  @media (max-width: 600px) {
+    header {
+      flex-direction: column; /* Stack items vertically */
+      align-items: center; /* Center items horizontally */
+      text-align: center; /* Center text within the header */
+    }
+
+    header > div:first-child {
+      flex-direction: column; /* Stack image and name vertically */
+      align-items: center; /* Center image and name */
+      margin-bottom: 10px; /* Add some space between image/name and job title */
+    }
+
+    .profile-image-container {
+      width: 80px; /* Smaller image on mobile */
+      height: 80px;
+      margin-right: 0; /* Remove right margin when stacked */
+      margin-bottom: 10px; /* Add space below the image */
+    }
+
+    header p {
+      text-align: center; /* Center job title on mobile */
+    }
   }
   </style>
 </head>
