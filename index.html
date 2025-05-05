@@ -275,6 +275,7 @@
       <div class="dropdown-content">
         <a href="#football" class="dropdown-item" onclick="showSubsection('football')">Football Analytics</a>
         <a href="#general" class="dropdown-item" onclick="showSubsection('general')">General Data Science</a>
+        <a href="#general" class="dropdown-item" onclick="showSubsection('de')">Data Engineering</a>
       </div>
     </div>
   </nav>
@@ -379,7 +380,7 @@
                 <li>Utilize a KNN algorithm to identify and retrieve statistically similar players based on their performance data.</li>
             </ul>
         </li>
-        <li>Implemented logic to listen for live changes in the PostgreSQL database, enabling near real-time updates to the Afriskut platform.</li>
+        <li>Implemented logic to listen for live changes in the PostgreSQL database, enabling near real-time updates to the Afriskaut platform.</li>
         <li>Utilized AWS services for deployment and scalability of the API.</li>
         <li>Managed project development and version control using GitHub.</li>
     </ul>
@@ -481,6 +482,35 @@
             </div>
           </div>
         </div>
+      </div>
+    
+      <!-- General Data Science -->
+    <div class="sub-section" id="general">
+      <h2>General Data Engineering Projects</h2>
+      <div class="grid-container">
+        
+        <div class="card">
+    <h3>Real-Time Sales Data Processing with Spark & Kafka</h3>
+    <div class="tech-stack">
+        <span class="tech-item">Apache Kafka</span>
+        <span class="tech-item">Apache Spark (PySpark)</span>
+        <span class="tech-item">Structured Streaming</span>
+        <span class="tech-item">PostgreSQL</span>
+        <span class="tech-item">JDBC</span>
+        <span class="tech-item">Python (Anaconda)</span>
+    </div>
+    <ul>
+        <li>Developed a real-time data pipeline to process sales data as it arrives.</li>
+        <li>Configured Apache Kafka to consume streaming sales data from the `sales_data` topic.</li>
+        <li>Utilized PySpark with Structured Streaming to parse, transform, and aggregate the incoming data in real-time.</li>
+        <li>Implemented logic to write the aggregated results (e.g., total sales per product) into a PostgreSQL database using the JDBC driver.</li>
+        <li>Optionally implemented functionality to export the aggregated output to CSV files for local testing and debugging purposes.</li>
+    </ul>
+          <div class="project-links">
+            <button class="project-button github-button" onclick="window.location.href='https://github.com/tayostats/Bottleneck-Forecasting'">View Code</button>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
